@@ -593,6 +593,18 @@ img {
   margin: 0;
 }
 
+.button-close {
+  display: flex;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.button-close > .item {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
 /*------------ страница портфолио------------- */
 .btn .list {
   display: flex;
@@ -651,17 +663,41 @@ img {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.card-set .link {
-  position: relative;
+.item-card-set:hover .link-thumb::before,
+.item-card-set:hover .text-thumb {
+  opacity: 1;
 }
 
-.link-img-thumb::before {
+.card-set .link {
+}
+
+.link-thumb {
+  position: relative;
+  width: 100%;
+}
+
+.link-thumb::before {
   position: absolute;
   display: inline-block;
   content: '';
-  width: 370px;
-  height: 294px;
+  width: 100%;
+  height: 100%;
   background-color: var(--button-bg-color);
+  opacity: 0;
+}
+
+.text-thumb {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  padding: 63px 24px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.56;
+
+  color: var(--main-color);
 }
 
 .link-content {
