@@ -669,21 +669,7 @@ img {
 
 .item-card-set:hover,
 .item-card-set:focus {
-  outline: none;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-}
-
-.item-card-set:hover .link-thumb::before,
-.item-card-set:hover .text-thumb {
-  opacity: 1;
-}
-
-.card-set .link {
-}
-
-.link-thumb {
-  position: relative;
-  width: 100%;
 }
 
 .link-thumb::before {
@@ -694,6 +680,9 @@ img {
   height: 100%;
   background-color: var(--button-bg-color);
   opacity: 0;
+
+  transform: translateY(0);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .text-thumb {
@@ -708,6 +697,19 @@ img {
   line-height: 1.56;
 
   color: var(--main-color);
+  transform: translateY(0);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.item-card-set:hover .link-thumb::before,
+.item-card-set:hover .text-thumb {
+  opacity: 1;
+  transform: translateY(100%);
+}
+
+.link-thumb {
+  position: relative;
+  width: 100%;
 }
 
 .link-content {
